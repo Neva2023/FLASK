@@ -4,9 +4,12 @@ import numpy as np
 
 app = Flask(__name__)
 
+
 # Load the saved model
-with open('decision_tree_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+
+from joblib import load
+model = load('filename.joblib') 
+
 
 @app.route("/")
 def Home():
